@@ -1,0 +1,104 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Header */
+header {
+    background: #ffac00;
+    color: #fff;
+    text-align: center;
+    padding: 50px 20px;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+}
+
+header p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+/* Company Details Section */
+#company-details {
+    padding: 40px 20px;
+    background-color: #f7f7f7;
+}
+
+#company-details h2, #company-details h3 {
+    color: #ffac00;
+    margin-bottom: 10px;
+}
+
+#company-details p {
+    margin: 10px 0;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* Bus Stands Section */
+#bus-stands {
+    padding: 40px 20px;
+    background: #fff;
+}
+
+#bus-stands h2 {
+    text-align: center;
+    color: #ffac00;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+table th, table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+table th {
+    background-color: #ffac00;
+    color: white;
+}
+
+table tbody tr:hover {
+    background-color: #f5f5f5;
+}
+
+/* Back to Main Page Button */
+#back-to-main {
+    text-align: center;
+    margin: 40px 0;
+}
+
+#back-to-main .btn {
+    text-decoration: none;
+    padding: 15px 30px;
+    background: #ffac00;
+    color: white;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+#back-to-main .btn:hover {
+    background: #f88f01;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #333;
+    color: white;
+    margin-top: 20px;
+}

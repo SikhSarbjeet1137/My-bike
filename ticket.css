@@ -1,0 +1,97 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #344e41;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  /* Ticket Container */
+  .ticket-container {
+    text-align: center;
+  }
+  
+  .ticket {
+    background: #ffffff;
+    border: 2px solid #ffcc00;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 400px;
+    animation: fadeIn 1s ease-out;
+  }
+  
+  /* Header */
+  .ticket-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #ffcc00;
+    padding-bottom: 10px;
+  }
+  
+  .ticket-header h1 {
+    margin: 0;
+    color: #333;
+  }
+  
+  .ticket-header img {
+    height: 50px;
+  }
+  
+  /* Body */
+  .ticket-body {
+    text-align: left;
+    margin-top: 15px;
+  }
+  
+  .ticket-body p {
+    margin: 10px 0;
+    color: #555;
+  }
+  
+  .ticket-body span {
+    color: #000;
+    font-weight: bold;
+  }
+  
+  /* Footer */
+  .ticket-footer {
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 2px solid #ffcc00;
+    color: #333;
+    font-size: 14px;
+  }
+  
+  /* Back Button */
+  .back-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #ffcc00;
+    border: none;
+    color: #333;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+  }
+  
+  .back-button:hover {
+    background: #ff9900;
+  }
+  
+  /* Animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  

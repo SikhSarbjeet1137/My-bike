@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rent Page - MyBike Ahmedabad</title>
+    <link rel="stylesheet" href="rent.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+        (function () {
+            emailjs.init("5aaGCtfwnpD79YIGR"); // Replace with your EmailJS user ID
+        })();
+    </script>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="logo">
+            <img src="Design 4.png" alt="MyBike Logo"> <!-- Add your logo image -->
+            <h1>MyBike Rentals</h1>
+        </div>
+    </header>
+
+    <!-- Rent Section -->
+    <div class="container">
+        <h1>Ahmedabad Bus Stand Rental</h1>
+        <p>Choose your journey and make a payment</p>
+
+        <form id="rent-form">
+            <div class="select-container">
+                <label for="from">From:</label>
+                <select id="from" name="from" required>
+                    <option value="" disabled selected>Select Starting Station</option>
+                    <option value="Vastral">Vastral</option>
+                    <option value="Kalupur">Kalupur</option>
+                    <option value="Maninagar">Maninagar</option>
+                    <option value="SG Highway">SG Highway</option>
+                    <option value="Bapunagar">Bapunagar</option>
+                    <option value="Ashram Road">Ashram Road</option>
+                    <option value="Thaltej">Thaltej</option>
+                    <option value="Naroda">Naroda</option>
+                    <option value="Ahmedabad Railway Station">Ahmedabad Railway Station</option>
+                    <option value="Paldi">Paldi</option>
+                    <option value="Kankaria">Kankaria</option>
+                    <option value="Vadaj">Vadaj</option>
+                    <option value="Gandhinagar">Gandhinagar</option>
+                    <option value="Mithakhali">Mithakhali</option>
+                    <option value="Dholka">Dholka</option>
+                    <option value="Kochrab">Kochrab</option>
+                    <option value="Vijay Char Rasta">Vijay Char Rasta</option>
+                    <option value="Naranpura">Naranpura</option>
+                    <option value="Navrangpura">Navrangpura</option>
+                    <option value="Sarkhej">Sarkhej</option>
+                    <option value="Vejalpur">Vejalpur</option>
+                    <option value="Ranip">Ranip</option>
+                    <option value="Ghatlodia">Ghatlodia</option>
+                    <option value="Mansarovar">Mansarovar</option>
+                    <option value="Bopal">Bopal</option>
+                    <option value="Mochi Bazar">Mochi Bazar</option>
+                </select>
+            </div>
+
+            <div class="select-container">
+                <label for="to">To:</label>
+                <select id="to" name="to" required>
+                    <option value="" disabled selected>Select Destination Station</option>
+                    <option value="Vastral">Vastral</option>
+                    <option value="Kalupur">Kalupur</option>
+                    <option value="Maninagar">Maninagar</option>
+                    <option value="SG Highway">SG Highway</option>
+                    <option value="Bapunagar">Bapunagar</option>
+                    <option value="Ashram Road">Ashram Road</option>
+                    <option value="Thaltej">Thaltej</option>
+                    <option value="Naroda">Naroda</option>
+                    <option value="Ahmedabad Railway Station">Ahmedabad Railway Station</option>
+                    <option value="Paldi">Paldi</option>
+                    <option value="Kankaria">Kankaria</option>
+                    <option value="Vadaj">Vadaj</option>
+                    <option value="Gandhinagar">Gandhinagar</option>
+                    <option value="Mithakhali">Mithakhali</option>
+                    <option value="Dholka">Dholka</option>
+                    <option value="Kochrab">Kochrab</option>
+                    <option value="Vijay Char Rasta">Vijay Char Rasta</option>
+                    <option value="Naranpura">Naranpura</option>
+                    <option value="Navrangpura">Navrangpura</option>
+                    <option value="Sarkhej">Sarkhej</option>
+                    <option value="Vejalpur">Vejalpur</option>
+                    <option value="Ranip">Ranip</option>
+                    <option value="Ghatlodia">Ghatlodia</option>
+                    <option value="Mansarovar">Mansarovar</option>
+                    <option value="Bopal">Bopal</option>
+                    <option value="Mochi Bazar">Mochi Bazar</option>
+                </select>
+            </div>
+
+            <div id="journey-details">
+                <p>Distance: <span id="distance">-</span> km</p>
+                <p>Price: ₹<span id="price">-</span></p>
+            </div>
+
+            <button type="button" id="calculate-btn" class="btn">Calculate</button>
+<a href ="pay.html"><button type="submit" id="pay-now-btn" class="btn">Pay Now</button></a>
+        </form>
+
+        <div id="notification" class="notification hidden">
+            <p>Please wait, redirecting to payment...</p>
+        </div>
+
+        <!-- Back to Main button -->
+        <button onclick="window.location.href='index.html'" class="btn-back">Back to Main</button>
+    </div>
+
+    <!-- Footer Section with Contact Us and Social Media Icons -->
+    <footer class="footer">
+        <div class="footer-content">
+            <h3>Contact Us</h3>
+            <form id="contact-form" onsubmit="sendEmail(event)">
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
+                <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+
+            <div class="location">
+                <h4>Our Location</h4>
+                <p>123 MyBike Road, Ahmedabad, Gujarat, India</p>
+            </div>
+
+            <div class="social-media">
+              <a href="#" class="social-icon"><i class="fa-brands fa-square-instagram fa-bounce"></i></a>
+              <a href="#" class="social-icon"><i class="fa-solid fa-x fa-fade"></i></a>
+              <a href="#" class="social-icon"><i class="fa-brands fa-facebook fa-flip"></i></a>
+              <a href="#" class="social-icon"><i class="fa-brands fa-linkedin fa-beat"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize emailJS (your user ID)
+        emailjs.init("5aaGCtfwnpD79YIGR"); // Replace with your EmailJS user ID
+
+        // Define all station pairs for distance and price
+        const distances = {
+            "Vastral": { "Kalupur": 10, "Maninagar": 5, "SG Highway": 15, "Bapunagar": 12, "Ashram Road": 10, "Thaltej": 18, "Naroda": 14, "Ahmedabad Railway Station": 8, "Paldi": 10, "Kankaria": 12, "Vadaj": 16, "Gandhinagar": 25, "Mithakhali": 22, "Dholka": 30, "Kochrab": 7, "Vijay Char Rasta": 12, "Naranpura": 14, "Navrangpura": 20, "Sarkhej": 19, "Vejalpur": 23, "Ranip": 17, "Ghatlodia": 18, "Mansarovar": 24, "Bopal": 26, "Mochi Bazar": 5 },
+            "Kalupur": { "Vastral": 10, "Maninagar": 5, "SG Highway": 8, "Bapunagar": 6, "Ashram Road": 7, "Thaltej": 15, "Naroda": 11, "Ahmedabad Railway Station": 3, "Paldi": 5, "Kankaria": 7, "Vadaj": 9, "Gandhinagar": 22, "Mithakhali": 18, "Dholka": 28, "Kochrab": 5, "Vijay Char Rasta": 7, "Naranpura": 8, "Navrangpura": 14, "Sarkhej": 14, "Vejalpur": 18, "Ranip": 13, "Ghatlodia": 15, "Mansarovar": 19, "Bopal": 22, "Mochi Bazar": 3 },
+            // Add all other stations combinations here
+        };
+
+        const prices = {
+            "Vastral": { "Kalupur": 50, "Maninagar": 40, "SG Highway": 60, "Bapunagar": 45, "Ashram Road": 50, "Thaltej": 70, "Naroda": 60, "Ahmedabad Railway Station": 45, "Paldi": 50, "Kankaria": 55, "Vadaj": 65, "Gandhinagar": 100, "Mithakhali": 90, "Dholka": 130, "Kochrab": 40, "Vijay Char Rasta": 60, "Naranpura": 65, "Navrangpura": 85, "Sarkhej": 80, "Vejalpur": 90, "Ranip": 70, "Ghatlodia": 75, "Mansarovar": 95, "Bopal": 100, "Mochi Bazar": 30 },
+            "Kalupur": { "Vastral": 50, "Maninagar": 30, "SG Highway": 45, "Bapunagar": 35, "Ashram Road": 40, "Thaltej": 70, "Naroda": 50, "Ahmedabad Railway Station": 15, "Paldi": 30, "Kankaria": 40, "Vadaj": 45, "Gandhinagar": 85, "Mithakhali": 75, "Dholka": 110, "Kochrab": 30, "Vijay Char Rasta": 40, "Naranpura": 50, "Navrangpura": 60, "Sarkhej": 60, "Vejalpur": 70, "Ranip": 55, "Ghatlodia": 60, "Mansarovar": 80, "Bopal": 85, "Mochi Bazar": 15 },
+            // Add all other station price pairs here
+        };
+
+        // Calculate and display distance and price when Calculate button is clicked
+        document.getElementById('calculate-btn').addEventListener('click', function () {
+            const fromStation = document.getElementById('from').value;
+            const toStation = document.getElementById('to').value;
+
+            if (fromStation && toStation && distances[fromStation] && distances[fromStation][toStation]) {
+                const distance = distances[fromStation][toStation];
+                const price = prices[fromStation][toStation];
+
+                document.getElementById('distance').textContent = distance;
+                document.getElementById('price').textContent = price;
+            }
+        });
+
+        // Handle the rent form submission and redirect to payment page
+        document.getElementById('rent-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            document.getElementById('notification').classList.remove('hidden');
+
+            setTimeout(function () {
+                window.location.href = 'pay.html';
+            }, 2000);
+        });
+
+        // Handle the contact form submission
+        function sendEmail(event) {
+            event.preventDefault();
+            const form = event.target;
+
+            emailjs.sendForm("service_hyvaz0n", "template_bu2m02q", form)
+                .then(function(response) {
+                    alert('Message sent successfully!');
+                }, function(error) {
+                    alert('Message failed to send: ' + error);
+                });
+        }
+    </script>
+</body>
+</html>

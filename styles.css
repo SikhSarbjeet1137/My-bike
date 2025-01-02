@@ -1,0 +1,387 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(to bottom, #f4f4f4, #eaeaea);
+    color: #333;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+nav {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+nav .logo img {
+    border-radius: 10PX;
+    width: 50px;
+    transition: transform 0.3s ease-in-out;
+}
+
+nav .logo img:hover {
+    transform: scale(1.1);
+}
+
+nav .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+nav .nav-links li {
+    display: inline;
+}
+
+nav .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease-in-out;
+}
+
+nav .nav-links a:hover {
+    color: #ffcc00;
+}
+
+/* Rent Bike Button at the Right Middle */
+nav .rent-bike-btn {
+    background: linear-gradient(145deg, #ffcc00, #ff9900);
+    color: #fff;
+    padding: 12px 24px;
+    text-decoration: none;
+    position: fixed;
+    top: 50%; /* Center vertically */
+    right: 20px; /* Position to the right */
+    transform: translateY(-50%); /* Adjust for exact center */
+    border-radius: 30px;
+    font-weight: 700;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s, transform 0.3s ease-in-out;
+}
+
+nav .rent-bike-btn:hover {
+    background: linear-gradient(145deg, #ff9900, #ffcc00);
+    transform: scale(1.05); /* Slightly scale up the button */
+}
+
+/* Image Slider (Above About Us) */
+#slider {
+    position: relative;
+    margin-top: 2rem;
+}
+
+.slider-container {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.slider {
+    display: flex;
+    transition: transform 1s ease-in-out; /* Smooth transition for sliding */
+}
+
+.slider img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Navigation Buttons for Slider */
+.slider-nav {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.slider-nav button {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+.slider-nav button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* About Us, Company Details, and Founders Sections */
+#about-us {
+    padding: 50px 20px;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+#about-us h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+#about-us p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 2rem;
+}
+
+/* About Details */
+.about-details {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 3rem;
+}
+
+.info {
+    width: 45%;
+}
+
+.info h3 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.info p, .info ul {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #555;
+}
+
+.info ul {
+    list-style: none;
+}
+
+.info li {
+    margin-bottom: 10px;
+}
+
+/* Company History */
+.company-history {
+    background-color: white;
+    padding: 2rem;
+    margin-bottom: 3rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.company-history h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.company-history p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+}
+
+.founders {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+    gap: 2rem;
+}
+
+.founder {
+    display: flex;
+    align-items: center;
+    width: 45%;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.founder:hover {
+    transform: scale(1.05);
+}
+
+.founder img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-right: 20px;
+    object-fit: cover;
+}
+
+.founder-details h4 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.founder-details p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Footer Section */
+/* Footer Styles */
+footer {
+    background: linear-gradient(135deg, #ffac00, #f88f01);
+    color: white;
+    padding: 60px 20px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-info {
+    flex: 1;
+    padding: 20px;
+}
+
+.footer-info p {
+    font-size: 1rem;
+    color: #f1f1f1;
+    margin-top: 10px;
+}
+
+.footer-contact h4, .footer-links h4, .footer-newsletter h4 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.footer-contact ul {
+    list-style: none;
+    margin-bottom: 15px;
+}
+
+.footer-contact li {
+    margin: 10px 0;
+    color: #f1f1f1;
+}
+
+.footer-contact li i {
+    margin-right: 10px;
+}
+
+.footer-follow {
+    margin-top: 20px;
+}
+
+.footer-follow h4 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.social-icons-horizontal {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.social-icon {
+    font-size: 1.5rem;
+    color: #fff;
+    transition: color 0.3s;
+}
+
+.social-icon:hover {
+    color: #333;
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links li {
+    margin: 10px 0;
+    color: #f1f1f1;
+}
+
+.footer-links li a {
+    text-decoration: none;
+    color: #f1f1f1;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #ffac00;
+}
+
+.footer-newsletter form {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.footer-newsletter input[type="email"] {
+    padding: 10px;
+    font-size: 1rem;
+    width: 250px;
+    border: none;
+    border-radius: 5px;
+}
+
+.footer-newsletter button {
+    padding: 10px 20px;
+    background-color: #ffac00;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.footer-newsletter button:hover {
+    background-color: #f88f01;
+}
+
+.footer-bottom {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 1rem;
+}
+.footer-container.copyright p {
+    margin: 10px 0 0;
+    font-size: 12px;
+    color: #bbb; /* Softer color for subtle appearance */
+  }
+  
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-info, .footer-links, .footer-newsletter {
+        flex: 1 1 100%;
+        margin-bottom: 20px;
+    }
+
+    .social-icons-horizontal {
+        justify-content: center;
+    }
+}

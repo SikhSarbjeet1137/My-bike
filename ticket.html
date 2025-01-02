@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Ticket - My Bike</title>
+  <link rel="stylesheet" href="ticket.css">
+</head>
+<body>
+  <div class="ticket-container">
+    <div class="ticket">
+      <div class="ticket-header">
+        <h1>My Bike</h1>
+        <img src="Design 4.png"  alt="My Bike Logo">
+      </div>
+      <div class="ticket-body">
+        <p><strong>Name:</strong> <span id="ticket-name"></span></p>
+        <p><strong>Email:</strong> <span id="ticket-email"></span></p>
+        <p><strong>Phone:</strong> <span id="ticket-number"></span></p>
+        <p><strong>Payment Method:</strong> <span id="ticket-method"></span></p>
+        <p><strong>Date & Time:</strong> <span id="ticket-time"></span></p>
+      </div>
+      <div class="ticket-footer">
+        <p>Thank you for choosing <strong>My Bike</strong>! Have a wonderful ride!</p>
+      </div>
+    </div>
+    <button onclick="window.location.href='index.html'" class="back-button">Back to Home</button>
+  </div>
+
+  <script src="ticket.js"></script>
+</body>
+</html>

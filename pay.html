@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment - My Bike</title>
+  <link rel="stylesheet" href="pay.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="Design 4.png" alt="My Bike Logo">
+      <h1>My Bike Payment</h1>
+    </div>
+  </header>
+
+  <main>
+    <section class="payment-section">
+      <h2>Complete Your Payment</h2>
+      <form id="payment-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" placeholder="Enter your name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" placeholder="Enter your email" required>
+
+        <label for="number">Phone Number:</label>
+        <input type="text" id="number" placeholder="Enter your phone number" required>
+
+        <label for="amount">Amount:</label>
+        <input type="number" id="amount" placeholder="Enter amount" required>
+
+        <label for="payment-method">Payment Method:</label>
+        <select id="payment-method" required>
+          <option value="" disabled selected>Select Payment Method</option>
+          <option value="upi">UPI</option>
+          <option value="qr">QR Code</option>
+          <option value="card">Card</option>
+          <option value="offline">Offline</option>
+        </select>
+
+        <!-- UPI and QR Details -->
+        <div id="upi-qr-details" class="hidden">
+          <label for="upi-id">UPI ID:</label>
+          <input type="text" id="upi-id" placeholder="Enter UPI ID">
+          <button type="button" id="generate-qr">Generate QR</button>
+          <div id="qr-code"></div>
+        </div>
+
+        <!-- Card Details -->
+        <div id="card-details" class="hidden">
+          <label for="card-number">Card Number:</label>
+          <input type="text" id="card-number" placeholder="Enter card number">
+
+          <label for="cvv">CVV:</label>
+          <input type="password" id="cvv" placeholder="Enter CVV">
+        </div>
+
+        <!-- Buttons -->
+        <div class="buttons">
+          <button type="submit">Pay</button>
+          <button type="button" onclick="window.location.href='index.html'">Back</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 My Bike</p>
+  </footer>
+
+  <script src="pay.js"></script>
+</body>
+</html>
+
+
+
+
